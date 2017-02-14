@@ -1,0 +1,17 @@
+[core]
+	editor = emacs
+[color]
+	ui = true
+[alias]
+	ci = commit
+	co = checkout
+[push]
+	default = simple
+[tag]
+	sort = version:refname
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
+[include]
+	path = .gitconfig.local
