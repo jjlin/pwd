@@ -27,7 +27,8 @@ ARG PKGS_EXTERNAL="\
     git \
 "
 
-RUN apt-get update \
+RUN set -x \
+ && apt-get update \
  && apt-get -y install ${PKGS} \
  && add-apt-repository -y ppa:git-core/ppa \
  && curl -fsSL https://apt.dockerproject.org/gpg | apt-key add - \
