@@ -22,7 +22,7 @@ ARG PKGS="\
 "
 
 ARG PKGS_EXTERNAL="\
-    docker-engine \
+    docker-ce \
     git \
 "
 
@@ -30,9 +30,9 @@ RUN set -x \
  && apt-get update \
  && apt-get -y install ${PKGS} \
  && add-apt-repository -y ppa:git-core/ppa \
- && curl -fsSL https://apt.dockerproject.org/gpg | apt-key add - \
+ && curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add - \
  && add-apt-repository \
-    "deb https://apt.dockerproject.org/repo/ ubuntu-$(lsb_release -cs) main" \
+    "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) edge" \
  && apt-get update \
  && apt-get -y install ${PKGS_EXTERNAL} \
  && apt-get clean
