@@ -9,7 +9,7 @@ ARG PKGS="\
     bash-completion \
     ca-certificates \
     curl \
-    emacs \
+    emacs-nox \
     less \
     maven \
     openjdk-8-jdk-headless \
